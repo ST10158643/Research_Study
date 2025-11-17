@@ -1,93 +1,77 @@
-## Account Creation
+Comparative Sentiment Analysis of X Before and After the Introduction of Free‑Speech Policies
 
-## Comparative Sentiment Analysis of X Before and After the Introduction of Free‑Speech Policies
-
----
-
-##Project Overview
+Project Overview
 
 In October 2022, it was officially announced that Elon Musk had acquired Twitter. This acquisition was accompanied by intentions to diversify the platform beyond its traditional social function and to revise content-moderation approaches.
 
-On 28 February 2023, X replaced the *Violent Threats Policy* with the *Violent Speech Policy* (Clark, 2023). While the new policy outlined broad rules against abusive behaviour, it lacked clear examples and left some enforcement details ambiguous.
+On 28 February 2023, X replaced the Violent Threats Policy with the Violent Speech Policy (Clark, 2023). While the new policy outlined broad rules against abusive behaviour, it lacked clear examples and left some enforcement details ambiguous.
 
 This research project examines how these policy changes influenced political discourse on X. Specifically, the study compares sentiment, polarisation, and harmful discourse across the 2020 and 2024 U.S. election periods.
 
----
-
-## Research Purpose
+Research Purpose
 
 The purpose of this study is to compare user sentiment on X before and after the implementation of free-speech-oriented moderation policies. Using natural language processing (NLP), the analysis evaluates:
 
-- shifts in **sentiment**
-- changes in **polarisation**
-- changes in **harmful or toxic discourse**
+- shifts in sentiment
+- changes in polarisation
+- changes in harmful or toxic discourse
 
 across left-leaning and right-leaning political communities.
 
----
+Research Questions
 
-## Research Questions
+1. How has user sentiment on X shifted since implementation of free-speech policies?  
+2. To what extent has sentiment within left-leaning and right-leaning communities become polarised after policy changes?  
+3. How has the volume of harmful content changed within these ideological communities following the implementation of free-speech policies?
 
-1. **How has user sentiment on X shifted since implementation of free-speech policies?**  
-2. **To what extent has sentiment within left-leaning and right-leaning communities become polarised after policy changes?**  
-3. **How has the volume of harmful content changed within these ideological communities following the implementation of free-speech policies?**
+ Research Objectives
 
----
+- Objective 1: Analyse sentiment before and after moderation changes to identify shifts across political groups.  
+- Objective 2: Determine whether polarisation increased within ideological communities.  
+- Objective 3: Examine whether relaxed speech policies contributed to a rise in harmful discourse.
 
-## Research Objectives
+Methodological Summary
 
-- **Objective 1:** Analyse sentiment before and after moderation changes to identify shifts across political groups.  
-- **Objective 2:** Determine whether polarisation increased within ideological communities.  
-- **Objective 3:** Examine whether relaxed speech policies contributed to a rise in harmful discourse.
+The study follows a positivist, deductive, comparative longitudinal approach.
 
----
+- A positivist stance ensures an objective, measurable, and reproducible analysis.  
+- A longitudinal comparison allows observation of changes across two matched periods (2020 vs 2024).  
+- NLP methods were used to vectorise text, classify political leaning, and assign sentiment/toxicity probabilities.  
+- Statistical methods (Mann–Whitney U, Levene’s test, Spearman correlation) were applied to test significance, variance, and associations.
 
-## Methodological Summary
+Data Sources
 
-The study follows a **positivist**, **deductive**, **comparative longitudinal** approach.
+This project uses publicly available tweet datasets covering the 2020 and 2024 U.S. election periods. Raw datasets are not included in this repository due to size and licensing limits. All original data sources are cited below.
 
-- A **positivist** stance ensures an objective, measurable, and reproducible analysis.  
-- A **longitudinal comparison** allows observation of changes across two matched periods (2020 vs 2024).  
-- **NLP methods** were used to vectorise text, classify political leaning, and assign sentiment/toxicity probabilities.  
-- **Statistical methods** (Mann–Whitney U, Levene’s test, Spearman correlation) were applied to test significance, variance, and associations.
-
----
-
-## Data Sources
-
-This project uses **publicly available** tweet datasets covering the 2020 and 2024 U.S. election periods. Raw datasets are **not included** in this repository due to size and licensing limits. All original data sources are cited below.
-
-### 2020 U.S. Election Tweets (Kaggle)
+ 2020 U.S. Election Tweets (Kaggle)
 https://www.kaggle.com/datasets/manchunhui/us-election-2020-tweets
 
 - Combined dataset of Biden- and Trump-related tweets  
-- Approx. **1.7 million rows**  
-- Timeframe used: **15 October 2020 – 09 November 2020**
+- Approx. 1.7 million rows  
+- Timeframe used: 15 October 2020 – 09 November 2020
 
-### 2024 U.S. Election Tweets (GitHub)
+ 2024 U.S. Election Tweets (GitHub)
 https://github.com/sinking8/usc-x-24-us-election
 
-- Approx. **41.65 million tweets** (in 50k-row chunks)  
-- A processed subset of **9.2 million tweets** was extracted  
-- Timeframe used: **19 October 2024 – 11 November 2024**
+- Approx. 41.65 million tweets (in 50k-row chunks)  
+- A processed subset of 9.2 million tweets was extracted  
+- Timeframe used: 19 October 2024 – 11 November 2024
 
 Only English tweets within these timeframes were used. Irrelevant metadata (usernames, follower counts, replies, views) were removed.
 
----
+Data Preparation and Processing
 
-## Data Preparation and Processing
+1. Download raw datasets from Kaggle and GitHub.  
+2. Filter election-period English tweets.  
+3. Political Classification: Tweets classified as Left-leaning or Right-leaning using a fine-tuned DistilBERT model.  
+4. Sampling: Random sampling applied to 2024 data to balance representation with 2020.  
+5. Sentiment Classification: TwitterRoBERTa (TweetEval) used to assign positive, neutral, or negative sentiment.  
+6. Toxicity Detection: TwitterRoBERTa-Hate or HateBERT used to generate harmful-speech probabilities.  
+7. Statistical Analysis: Tests conducted on sentiment scores, variance, and toxicity probabilities.
 
-1. **Download raw datasets** from Kaggle and GitHub.  
-2. **Filter election-period English tweets.**  
-3. **Political Classification:** Tweets classified as **Left-leaning** or **Right-leaning** using a fine-tuned DistilBERT model.  
-4. **Sampling:** Random sampling applied to 2024 data to balance representation with 2020.  
-5. **Sentiment Classification:** TwitterRoBERTa (TweetEval) used to assign **positive**, **neutral**, or **negative** sentiment.  
-6. **Toxicity Detection:** TwitterRoBERTa-Hate or HateBERT used to generate harmful-speech probabilities.  
-7. **Statistical Analysis:** Tests conducted on sentiment scores, variance, and toxicity probabilities.
 
----
 
-## Repository Contents
+ Repository Contents
 
 This repository contains:
 
@@ -96,19 +80,14 @@ This repository contains:
 - Processed CSV files (classified samples, probability outputs, aggregated metrics)  
 - README documentation (this file)
 
----
+Models Not Included
 
-## Models Not Included
+Due to storage constraints and GitHub file-size limitations, the fine-tuned models are not included in this repository. The code required to fine-tune and recreate the models is included; trained model weights can be provided on request.
 
-Due to storage constraints and GitHub file-size limitations, the fine-tuned models are **not** included in this repository. The code required to fine-tune and recreate the models is included; trained model weights can be provided on request.
-
----
-
-## Ethical Notes
+Ethical Notes
 
 - Only publicly available data was used.  
 - Usernames and identifiable metadata were removed.  
 - Data is used strictly for academic research.
 
----
-````
+
