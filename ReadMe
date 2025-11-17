@@ -79,12 +79,7 @@ This repository contains:
 - Jupyter notebooks for exploratory analysis  
 - Processed CSV files (classified samples, probability outputs, aggregated metrics)  
 - README documentation (this file)
-
-Models Not Included
-
-Due to storage constraints and GitHub file-size limitations, the fine-tuned models are not included in this repository. 
-The code required to fine-tune and recreate the models is included and in full is available at:
-https://advtechonline-my.sharepoint.com/:f:/g/personal/st10158643_vcconnect_edu_za/IgC-LIezg4hITqkbfB-Uh00SAXIYK0fO-qwJ8a3zYMIH4pg?e=yUSXYh
+- fine-tuned models
 
 Ethical Notes
 
