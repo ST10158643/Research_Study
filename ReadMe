@@ -1,4 +1,5 @@
-*Comparative Sentiment Analysis of X Before and After the Introduction of Free-Speech Policies*
+
+# *Comparative Sentiment Analysis of X Before and After the Introduction of Free-Speech Policies*
 
 ---
 
@@ -20,7 +21,7 @@ The purpose of this study is to compare user sentiment on X before and after the
 * changes in polarisation
 * changes in harmful or toxic discourse
 
-across left-leaning and right-leaning political communities.
+across left-leaning and right-leanning political communities.
 
 ---
 
@@ -58,16 +59,18 @@ This project uses **publicly available** tweet datasets covering the 2020 and 20
 ### **2020 U.S. Election Tweets (Kaggle)**
 
 [https://www.kaggle.com/datasets/manchunhui/us-election-2020-tweets](https://www.kaggle.com/datasets/manchunhui/us-election-2020-tweets)
-• Combined dataset of Biden- and Trump-related tweets
-• Approx. **1.7 million rows**
-• Timeframe used: **15 October 2020 – 09 November 2020**
+
+* Combined dataset of Biden- and Trump-related tweets
+* Approx. **1.7 million rows**
+* Timeframe used: **15 October 2020 – 09 November 2020**
 
 ### **2024 U.S. Election Tweets (GitHub)**
 
 [https://github.com/sinking8/usc-x-24-us-election](https://github.com/sinking8/usc-x-24-us-election)
-• Approx. **41.65 million tweets** (in 50k-row chunks)
-• A processed subset of **9.2 million tweets** was extracted
-• Timeframe used: **19 October 2024 – 11 November 2024**
+
+* Approx. **41.65 million tweets** (in 50k-row chunks)
+* A processed subset of **9.2 million tweets** was extracted
+* Timeframe used: **19 October 2024 – 11 November 2024**
 
 Only English tweets within these timeframes were used. Irrelevant metadata (usernames, follower counts, replies, views) was removed.
 
@@ -76,7 +79,7 @@ Only English tweets within these timeframes were used. Irrelevant metadata (user
 ## **Data Preparation and Processing**
 
 1. **Download raw datasets** from Kaggle and GitHub.
-2. **Filter election-period English tweets**.
+2. **Filter election-period English tweets.**
 3. **Political Classification:**
 
    * Tweets classified as *Left-leaning* or *Right-leaning* using a fine-tuned DistilBERT model.
@@ -108,8 +111,7 @@ This repository contains:
 
 ## **Models Not Included**
 
-Due to storage constraints and GitHub file-size limitations, the fine-tuned models are not within
-this repository.However, can be provided on request and the code needed to recreate and save the models is fully provided.
+Due to storage constraints and GitHub file-size limitations, the fine-tuned models are **not** included in this repository. They can be provided on request. All code required to fine-tune and recreate the models is included.
 
 ---
 
